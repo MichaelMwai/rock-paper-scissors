@@ -1,5 +1,5 @@
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 
 const userLabel_div = document.getElementById("user-label");
 const compLabel_div = document.getElementById("comp-label");
@@ -20,9 +20,6 @@ function getComputerChoice() {
 function game(userChoice) {
   const computerChoice = getComputerChoice();
 
-  console.log(
-    "You chose " + userChoice + " and the computer chose " + computerChoice
-  );
   switch (userChoice + " " + computerChoice) {
     case "rock scissors":
     case "scissors paper":
@@ -33,6 +30,10 @@ function game(userChoice) {
         " and the computer chose " +
         computerChoice +
         "\n\nYOU WIN!!";
+
+      userScore++;
+
+      userScore_span.innerText = userScore;
       break;
     case "rock paper":
     case "paper scissors":
@@ -43,6 +44,10 @@ function game(userChoice) {
         " and the computer chose " +
         computerChoice +
         "\n\nYOU LOST!!";
+
+      computerScore++;
+
+      computerScore_span.innerText = computerScore;
       break;
     case "paper paper":
     case "rock rock":
